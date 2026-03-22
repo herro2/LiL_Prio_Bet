@@ -1,0 +1,657 @@
+/* --- 1. GRUNDINSTÄLLNINGAR --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #000000;
+    color: #f5f5f7;
+    line-height: 1.5;
+}
+
+/* --- 2. HEADER & NAVIGERING --- */
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: saturate(180%) blur(20px);
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    padding: 0 22px;
+    height: 60px; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.logo span {
+    color: #00d4ff;
+}
+
+.nav-cta {
+    background: #00d4ff;
+    color: #000;
+    padding: 6px 16px;
+    border-radius: 980px;
+    font-size: 13px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.nav-cta:hover {
+    transform: scale(1.05);
+    background: #00b8e6;
+}
+
+/* --- 3. POPUP-MENY (KEBAB MENY) --- */
+.menu-container {
+    position: relative;
+    margin: 0;
+}
+
+.dots-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px;
+    outline: none;
+}
+
+.dots-button span {
+    width: 4px;
+    height: 4px;
+    background-color: #86868b;
+    border-radius: 50%;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.dots-button:hover span {
+    background-color: #00d4ff;
+    transform: scale(1.2);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 45px;
+    background-color: #1c1c1e;
+    min-width: 180px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    z-index: 10000;
+    overflow: hidden;
+}
+
+.dropdown-content li {
+    list-style: none;
+}
+
+.dropdown-content a {
+    color: #f5f5f7;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    text-align: left;
+    transition: background 0.2s;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #00d4ff;
+}
+
+.show {
+    display: block !important;
+    animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- 4. LAYOUT OCH SEKTIONER --- */
+.container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.hero-medical {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-medical h1 {
+    color: #ffffff; 
+    font-size: 64px;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.slogan {
+    font-size: 18px;
+    color: #f5f5f7;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 40px;
+    color: #ffffff;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.badge {
+    font-size: 12px;
+    font-weight: 600;
+    color: #00d4ff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+/* --- 5. KORT OCH GRID (Affärsmodell etc) --- */
+.function-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.func-card, .apple-box {
+    background: #161617;
+    padding: 40px;
+    border-radius: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.5s ease;
+}
+
+.func-card:hover {
+    transform: scale(1.05);
+}
+
+.func-card h3 {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.apple-box h2 {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* --- 6. GRUNDARSIDAN --- */
+.main-title {
+    margin-bottom: 60px;
+    text-align: left;
+    color: #fff;
+    font-size: 48px;
+}
+
+.founder-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.founder-card {
+    display: flex;
+    flex-direction: column; /* Ändrat till column för att stapla bilden ovanför texten */
+    align-items: center;    /* Centrerar innehållet horisontellt */
+    text-align: center;     /* Centrerar texten */
+    gap: 15px;
+    background: #161617;
+    padding: 30px 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.founder-card:hover {
+    transform: translateY(-5px);
+}
+
+.avatar {
+    width: 90px;
+    height: 90px;
+    background: #d2d2d7;
+    border-radius: 50%;
+    flex-shrink: 0;
+    overflow: hidden; /* Nytt: Ser till att bilden stannar i cirkeln */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Nytt: Ser till att bilden fyller ut snyggt */
+}
+
+.founder-text h1 {
+    color: #fff;
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+}
+
+.founder-text p {
+    color: #86868b;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.school-section {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.school-info h2 {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.school-list {
+    color: #86868b;
+    list-style: none;
+    line-height: 2;
+    padding: 0;
+}
+
+.school-image-box {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.school-image-box img {
+    width: 100%;
+    display: block;
+    opacity: 0.8;
+}
+
+/* --- 7. FOOTER --- */
+footer {
+    background: #000000;
+    padding: 60px 20px;
+    color: #86868b;
+    font-size: 13px;
+    text-align: center;
+    border-top: 5px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- 8. RESPONSIVITET (För Mobiler) --- */
+@media (max-width: 768px) {
+    .function-grid, .founder-grid, .school-section {
+        grid-template-columns: 1fr;
+    }
+    .hero-medical h1 {
+        font-size: 40px;
+    }
+    .container {
+        padding: 40px 20px;
+    }
+}
+
+
+/* =============================================
+   BOKA.HTML – Digital Triage Demo
+   ============================================= */
+
+.demo-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 32px 20px;
+    gap: 20px;
+    min-height: calc(100vh - 60px);
+}
+
+.chat-container {
+    flex: 1 1 340px;
+    max-width: 540px;
+    min-width: 0;
+    background: #161617;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    overflow: hidden;
+}
+
+.chat-messages {
+    flex: 1;
+    min-height: 160px;
+    max-height: 320px;
+    overflow-y: auto;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #000;
+    scroll-behavior: smooth;
+}
+
+.message {
+    padding: 10px 14px;
+    border-radius: 14px;
+    max-width: 88%;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    opacity: 0;
+    animation: bubbleIn .22s ease forwards;
+}
+@keyframes bubbleIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.message.ai {
+    background: #1c1c1e;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-bottom-left-radius: 4px;
+    align-self: flex-start;
+}
+.message.user {
+    background: #00d4ff;
+    color: #000;
+    font-weight: 500;
+    border-bottom-right-radius: 4px;
+    align-self: flex-end;
+}
+
+.loading {
+    display: none;
+    padding: 10px 18px;
+    background: #000;
+    gap: 5px;
+    align-items: center;
+}
+.loading.active { display: flex; }
+.loading-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #00d4ff;
+    animation: dotPulse 1.2s ease-in-out infinite;
+}
+.loading-dot:nth-child(2) { animation-delay: .2s; }
+.loading-dot:nth-child(3) { animation-delay: .4s; }
+@keyframes dotPulse {
+    0%,80%,100% { transform: scale(.55); opacity: .3; }
+    40%          { transform: scale(1);   opacity: 1; }
+}
+
+.symptom-picker {
+    padding: 14px;
+    background: #0a0a0a;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.symptom-picker-label {
+    font-size: 0.72rem;
+    color: #86868b;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+}
+.symptom-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+.chip {
+    padding: 7px 13px;
+    border-radius: 980px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: #1c1c1e;
+    color: #86868b;
+    font-size: 0.82rem;
+    cursor: pointer;
+    user-select: none;
+    transition: background .15s, border-color .15s, color .15s;
+    -webkit-tap-highlight-color: transparent;
+}
+.chip:hover {
+    background: #2a2a2e;
+    border-color: rgba(255,255,255,0.2);
+    color: #f5f5f7;
+}
+.chip.selected {
+    background: rgba(0,212,255,0.15);
+    border-color: #00d4ff;
+    color: #00d4ff;
+}
+
+.picker-footer {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+#extra-input {
+    flex: 1;
+    background: #1c1c1e;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 9px 12px;
+    color: #f5f5f7;
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color .2s;
+    min-width: 0;
+}
+#extra-input:focus { border-color: #00d4ff; }
+#extra-input::placeholder { color: #555; }
+
+#send-btn {
+    background: #00d4ff;
+    border: none;
+    padding: 9px 18px;
+    border-radius: 980px;
+    color: #000;
+    font-weight: 700;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: background .2s, transform .2s, opacity .2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+#send-btn:hover:not(:disabled) { background: #00b8e6; transform: scale(1.04); }
+#send-btn:disabled { opacity: .35; cursor: not-allowed; transform: none; }
+
+.followup-input-area {
+    display: none;
+    padding: 12px 14px;
+    background: #0a0a0a;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    gap: 8px;
+    align-items: center;
+}
+.followup-input-area.active { display: flex; }
+#followup-input {
+    flex: 1;
+    background: #1c1c1e;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 9px 12px;
+    color: #f5f5f7;
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color .2s;
+    min-width: 0;
+}
+#followup-input:focus { border-color: #00d4ff; }
+#followup-btn {
+    background: #00d4ff;
+    border: none;
+    padding: 9px 16px;
+    border-radius: 980px;
+    color: #000;
+    font-weight: 700;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: background .2s, transform .2s, opacity .2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+#followup-btn:hover:not(:disabled) { background: #00b8e6; transform: scale(1.04); }
+#followup-btn:disabled { opacity: .35; cursor: not-allowed; transform: none; }
+
+.queue-container {
+    flex: 1 1 300px;
+    max-width: 480px;
+    min-width: 0;
+    background: #161617;
+    border-radius: 20px;
+    padding: 18px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    align-self: flex-start;
+}
+.queue-container.hidden  { display: none; }
+.queue-container.visible { animation: slideIn .35s ease forwards; }
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.queue-title {
+    color: #86868b;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    display: block;
+}
+.queue-scroll-box {
+    max-height: 400px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+.queue-list { list-style: none; }
+
+.queue-item {
+    display: flex;
+    flex-direction: column;
+    padding: 9px 6px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: background .12s;
+}
+.queue-item:last-child { border-bottom: none; }
+.queue-item:hover { background: rgba(255,255,255,0.02); border-radius: 8px; }
+
+.queue-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+.queue-item-label {
+    font-size: 0.82rem;
+    color: #d1d1d6;
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.queue-item-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.prio-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 980px;
+    white-space: nowrap;
+}
+.prio-high    { background: rgba(220,60,60,0.2);   color: #ff6b6b; }
+.prio-medium  { background: rgba(220,150,50,0.2);  color: #ffb84d; }
+.prio-low     { background: rgba(60,160,80,0.2);   color: #5ecb7a; }
+.prio-pending { background: rgba(255,255,255,0.05); color: #555; }
+
+.toggle-symptom-btn {
+    font-size: 0.68rem;
+    padding: 2px 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: transparent;
+    color: #86868b;
+    border-radius: 980px;
+    cursor: pointer;
+    transition: color .15s, border-color .15s;
+    white-space: nowrap;
+}
+.toggle-symptom-btn:hover { color: #00d4ff; border-color: #00d4ff; }
+
+.symptom-reveal {
+    display: none;
+    font-size: 0.75rem;
+    color: #86868b;
+    margin-top: 5px;
+    padding: 3px 0 2px 8px;
+    border-left: 2px solid rgba(0,212,255,0.25);
+    line-height: 1.4;
+}
+.symptom-reveal.open { display: block; animation: revealIn .16s ease; }
+@keyframes revealIn {
+    from { opacity: 0; transform: translateY(-3px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.user-highlight {
+    background: rgba(0,212,255,0.06);
+    border-left: 3px solid #00d4ff;
+    border-radius: 6px;
+}
+.user-highlight .queue-item-label { color: #00d4ff; font-weight: 600; }
+.user-highlight .symptom-reveal   { border-left-color: #00d4ff; color: #5bb8cc; }
+
+::-webkit-scrollbar             { width: 4px; }
+::-webkit-scrollbar-track       { background: transparent; }
+::-webkit-scrollbar-thumb       { background: #2e2e35; border-radius: 10px; }
+::-webkit

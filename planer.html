@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategiska Planer  LiL Prio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-left">
+            <div class="menu-container">
+                <button class="dots-button" onclick="toggleMenu()" aria-label="Meny">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <ul id="popup-menu" class="dropdown-content">
+                    <li><a href="index.html">Hem</a></li>
+                    <li><a href="index.html#market">Affärsmodell</a></li>
+                    <li><a href="planer.html">Vår Strategi</a></li>
+                    <li><a href="teamet.html">Teamet</a></li>
+                </ul>
+            </div>
+
+            <div class="logo">LiL <span>Prio</span></div>
+        </div>
+
+        <a href="boka.html" class="nav-cta">Demo</a>
+    </header>
+
+    <main>
+        <section class="hero" style="background: #161617; padding: 80px 20px;">
+            <div class="container">
+                <span class="badge">Strategisk Roadmap</span>
+                <h1 style="font-size: 48px;">Vår väg mot framtidens vård.</h1>
+                <p class="slogan">En djupdykning i hur LiL Prio skalar upp och mäter framgång.</p>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="apple-box" style="text-align: left; #161617; padding: 80px 20px;">
+                <h2>Möt vår Persona: "Sjuksköterskan Sara"</h2>
+                <p><strong>Profil:</strong> Sara, 34 år, arbetar på en överbelastad vårdcentral. <br>
+                <strong>Behov:</strong> Hon behöver snabbt kunna avgöra vilka patienter som inte kan vänta och vilka som kan få egenvårdsråd.<br>
+                <strong>Lösning:</strong> LiL Prio ger Sara ett för-sorterat flöde direkt i journalsystemet, vilket minskar hennes kognitiva belastning med 30%.</p>
+            </div>
+        </section>
+
+        <section class="bg-image-section">
+            <div class="container">
+                <h2>Datadriven optimering</h2>
+                <div class="function-grid">
+                    <div class="func-card" style="background: #161617; padding: 80px 20px;">
+                        <h3>Big Data Analys</h3>
+                        <p>Genom att analysera tusentals anonyma triage-fall kan vi förutsäga influensatoppar innan de sker.</p>
+                    </div>
+                    <div class="func-card" style="background: #161617; padding: 80px 20px;">
+                        <h3>KPI:er</h3>
+                        <p>Vi mäter "Time-to-Triage" och "Patient Trust Score" för att ständigt förbättra algoritmen.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                <h2>Marknadspotential</h2>
+                <p>Med en åldrande befolkning och brist på vårdpersonal är behovet av automatiserad triage enormt. Vi siktar på att vara implementerade i 3 regioner inom 24 månader.</p>
+            </div>
+        </section>
+    </main>
+   
+
+   <footer>
+        <div class="footer-content">
+            <p>Copyright &copy; 2026 LiL Prio.  Alla rättigheter förbehållna.  TE24SP Projekt: Webbutveckling & Företagsekonomi.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("popup-menu").classList.toggle("show");
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dots-button') && !event.target.parentElement.matches('.dots-button')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+	
+</body>
+</html>

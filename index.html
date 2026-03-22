@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiL Prio | Intelligent Triage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-left">
+            <div class="menu-container">
+                <button class="dots-button" onclick="toggleMenu()" aria-label="Meny">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <nav>
+                    <ul id="popup-menu" class="dropdown-content">
+                        <li><a href="index.html">Hem</a></li>
+                        <li><a href="index.html#market">Affärsmodell</a></li>
+                        <li><a href="planer.html">Vår Strategi</a></li>
+                        <li><a href="teamet.html">Teamet</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="logo">LiL <span>Prio</span></div>
+        </div>
+
+        <a href="boka.html" class="nav-cta">Demo</a>
+    </header>
+
+    <main>
+        <section class="hero-medical" role="img" aria-label="Läkare som använder digital teknik">
+            <div class="hero-content">
+                <h1>Rätt vård. <br>Bara ett klick bort.</h1>
+                <p class="slogan">LiL Prio använder avancerad AI för att prioritera patienter med precision.</p>
+            </div>
+        </section>
+			<h2>Vision & Målgrupp</h3>
+        <section id="about" class="container">
+            <div class="func-card">
+                <span class="badge">Vision & Målgrupp</span>
+                <h3>Sömlös integration för vårdgivare.</h3>
+                <p>Vår tjänst riktar sig primärt till <strong>regioner, sjukhus och vårdcentraler</strong> som kämpar med hög arbetsbelastning. Genom att integrera vår teknik optimerar vi resursanvändningen och avlastar akutmottagningar. Vi ger större möjligheter för både vårdpersonalen och patienterna.</p>
+            </div>
+        </section>
+
+        <section id="market" class="container">
+            <h2>Affärsmodell</h2>
+            <div class="function-grid">
+                <div class="func-card">
+                    <span class="badge">Core</span>
+                    <h3>Produkt</h3>
+                    <p>AI-driven chatt med patienten i fokus för att öka effektiviteten mellan patient och sjukvård.</p>
+                </div>
+                <div class="func-card">
+                    <span class="badge">Trust</span>
+                    <h3>Hållbarhet</h3>
+                    <p>Vi skapar en hållbar vårdkedja genom digital effektivisering. Genom att minska onödiga resor och sjukhusbesök minskar vi vårdens klimatavtryck.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Copyright &copy; 2026 LiL Prio</p>
+        <div style="margin-top: 10px;">
+            <a href="#" style="color: #86868b; text-decoration: none;">Instagram</a>
+            <a href="#" style="color: #86868b; text-decoration: none; margin-left: 15px;">LinkedIn</a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("popup-menu").classList.toggle("show");
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dots-button') && !event.target.parentElement.matches('.dots-button')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
