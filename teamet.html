@@ -1,112 +1,114 @@
 <!DOCTYPE html>	
 <html lang="sv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grundare  lil prio</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teamet | LiL Prio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <div class="header-left">
-        
-        <div class="menu-container">
-            <button class="dots-button" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="dropdown-content" id="dropdownMenu">
-                <li><a href="index.html">Hem</a></li>
-                <li><a href="teamet.html">Teamet</a></li>
+    <header>
+        <div class="header-left">
+            <div class="menu-container">
+                <button class="dots-button" onclick="toggleMenu()" aria-label="Meny">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <ul id="popup-menu" class="dropdown-content">
+                    <li><a href="index.html">Hem</a></li>
+                    <li><a href="index.html#market">Affärsmodell</a></li>
+                    <li><a href="planer.html">Vår Strategi</a></li>
+                    <li><a href="teamet.html">Teamet</a></li>
                 </ul>
+            </div>
+
+            <div class="logo">LiL <span>Prio</span></div>
         </div>
 
-        <div class="logo">LiL <span>Prio</span></div>
-    </div>
+        <a href="boka.html" class="nav-cta">Demo</a>
+    </header>
 
-    <a href="boka.html" class="nav-cta">Demo</a>
-</header>
+    <main class="container">
+        <span class="badge">Teamet</span>
+        <h1 class="main-title">Grundarna.</h1>
 
-    <main class="container">
-        <span class="badge">Teamet</span>
-        <h1 class="main-title">Grundarna.</h1>
+        <div class="founder-grid">
+            
+            <div class="founder-card">
+                <div class="avatar"><img src="oliver.jpg" alt="Oliver Larsson"></div>
+                <div class="founder-text">
+                    <h1>Oliver Larsson</h1>
+                    <p>Grundare & Ai specialist</p>
+                </div>
+            </div>
 
-        <div class="founder-grid">
-            
-            <div class="founder-card">
-                <div class="avatar"><img src="oliver.jpg" alt="Oliver Larsson"></div>
-                <div class="founder-text">
-                    <h1>Oliver Larsson</h1>
-                    <p>Grundare & Ai specialist</p>
-                </div>
-            </div>
+            <div class="founder-card">
+                <div class="avatar"><img src="unnamed.jpg" alt="Elias Wilck"></div>
+                <div class="founder-text">
+                    <h1>Elias Wilck</h1>
+                    <p>CFO</p>
+                </div>
+            </div>
 
-            <div class="founder-card">
-                <div class="avatar"><img src="unnamed.jpg" alt="Elias Wilck"></div>
-                <div class="founder-text">
-                    <h1>Elias Wilck</h1>
-                    <p>CFO</p>
-                </div>
-            </div>
+            <div class="founder-card">
+                <div class="avatar"><img src="patris.jpg" alt="Patric Strokan"></div>
+                <div class="founder-text">
+                    <h1>Patric Strokan</h1>
+                    <p>Operativ Chef</p>
+                </div>
+            </div>
 
-            <div class="founder-card">
-                <div class="avatar"><img src="patris.jpg" alt="Patric Strokan"></div>
-                <div class="founder-text">
-                    <h1>Patric Strokan</h1>
-                    <p>Operativ Chef</p>
-                </div>
-            </div>
+            <div class="founder-card">
+                <div class="avatar"><img src="z.png" alt="Leon Löwerud"></div>
+                <div class="founder-text">
+                    <h1>Leon Löwerud</h1>
+                    <p>Produktchef</p>
+                </div>
+            </div>
 
-            <div class="founder-card">
-                <div class="avatar"><img src="z.png" alt="Leon Löwerud"></div>
-                <div class="founder-text">
-                    <h1>Leon Löwerud</h1>
-                    <p>Produktchef</p>
-                </div>
-            </div>
+        </div>
 
-        </div>
+        <section class="school-section">
+            <div class="school-info">
+                <h2>Information om gruppen</h2>
+                <ul class="school-list">
+                    <li>Projekt: TE24SP</li>
+                    <li>Skola: Sven Eriksson Gymnasiet</li>
+                    <li>Fokus: Webbutveckling & Företagsekonomi</li>
+                </ul>
+            </div>
+            <div class="school-image-box">
+                <img src="https://www.boras.se/images/18.4cfafd0a18c8ac9090643bf/1703163752120/(2)%20SE_fasad_890.jpg" alt="sven eriksson gymnasiet">
+            </div>
+        </section>
+    </main>
 
-        <section class="school-section">
-            <div class="school-info">
-                <h2>Information om gruppen</h2>
-                <ul class="school-list">
-                    <li>Projekt: TE24SP</li>
-                    <li>Skola: Sven Eriksson Gymnasiet</li>
-                    <li>Fokus: Webbutveckling & Företagsekonomi</li>
-                </ul>
-            </div>
-            <div class="school-image-box">
-                <img src="https://www.boras.se/images/18.4cfafd0a18c8ac9090643bf/1703163752120/(2)%20SE_fasad_890.jpg" alt="sven eriksson gymnasiet">
-            </div>
-        </section>
-    </main>
+    <footer>
+        <div class="footer-content">
+            <p>Copyright &copy; 2026 Lil Prio. TE24SP Projekt.</p>
+        </div>
+    </footer>
 
-    <footer>
-        <div class="footer-content">
-            <p>Copyright &copy; 2026 Lil Prio. TE24SP Projekt.</p>
-        </div>
-    </footer>
+    <script>
+        function toggleMenu() {
+            document.getElementById("popup-menu").classList.toggle("show");
+        }
 
-    <script>
-        function toggleMenu() {
-            document.getElementById("popup-menu").classList.toggle("show");
-        }
-
-        window.onclick = function(event) {
-            if (!event.target.matches('.dots-button') && !event.target.parentElement.matches('.dots-button')) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                for (var i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-    </script>
+        window.onclick = function(event) {
+            if (!event.target.matches('.dots-button') && !event.target.parentElement.matches('.dots-button')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
 	
 </body>
 </html>
